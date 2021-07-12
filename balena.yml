@@ -6,7 +6,7 @@ assets:
   repository:
     type: "blob.asset"
     data:
-      url: "https://github.com/balenalabs-incubator/balena-locating"
+      url: "https://github.com/jacobhq/balenaLocating"
   logo:
     type: "blob.asset"
     data:

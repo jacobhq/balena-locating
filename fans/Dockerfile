@@ -1,7 +1,9 @@
-FROM baseImage
+FROM ubuntu
 
-RUN sudo curl https://download.argon40.com/argon1.sh | bash
+RUN apt-get -y install cron
 
-RUN sudo cp fans.conf /etc/argononed.conf
+ADD crontab /etc/cron.d/fan-cron
 
-RUN sudo systemctl restart argononed.service
+RUN chmod 0644 /etc/cron.d/fan-cron
+
+CMD cron

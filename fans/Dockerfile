@@ -1,5 +1,6 @@
 FROM ubuntu
 
+RUN apt-get -y update
 RUN apt-get -y install cron
 
 ADD crontab /etc/cron.d/fan-cron

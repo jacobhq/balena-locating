@@ -13,16 +13,7 @@ services:
         restart: "no"
         network_mode: host
     fan:
-        container_name: fan
+        container_name: fans
+        build: ./fans
         restart: always
-        image: pilotak/rpi-fan
-        environment:
-            - DESIRED_TEMP=35
-            - FAN_PIN=12
-            - FAN_PWM_MIN=25
-            - FAN_PWM_MAX=100
-            - FAN_PWM_FREQ=25
-            - P_TEMP=15
-            - I_TEMP=0.4
-        devices:
-            - /dev/gpiomem
+        privileged: true
